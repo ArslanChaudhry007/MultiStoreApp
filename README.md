@@ -1,16 +1,9 @@
 #MultiStoreApp
 
-A new Flutter project.
+The “Shope” e-Commerce UI Kit has the goal to help you to save time with the frontend development. You can use this template to build your apps for Android and iOS in Flutter. The UI Kit includes all resources you need to reuse the components, it includes 38 screens, assets, icons, and fonts.
 
-## Getting Started
+Flutter is Google’s portable UI toolkit for building beautiful, natively-compiled applications for mobile, web, and desktop from a single codebase.
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Minimalist Design
+Clean and Structured code
+Reusable Components
