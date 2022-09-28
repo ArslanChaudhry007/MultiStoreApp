@@ -1,4 +1,4 @@
-# multi_store_app
+#MultiStoreApp
 
 A new Flutter project.
 
