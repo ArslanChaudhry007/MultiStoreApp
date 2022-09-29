@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:multi_store_app/main_screens/customer_supplier_home_screens/customer_home.dart';
+import 'package:multi_store_app/main_screens/customer_supplier_home_screens/supplier_home_screen.dart';
+import 'package:multi_store_app/main_screens/welcome_screen_vc/welcome_screen.dart';
+import 'package:multi_store_app/supplier_screens/dashboard_screens_vc/my_store.dart';
 import 'splash_screen.dart';
 
 void main() {
@@ -10,9 +14,16 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return  MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: SplashScreen(),
+    //  home: const SplashScreen(),
+      initialRoute: '/splash_screen',
+      routes: {
+        '/splash_screen':(context) => const SplashScreen(),
+        '/welcome_screen':(context) => const WelcomeScreen(),
+        '/customer_home':(context) => const CustomerHomeScreen(),
+        '/supplier_home':(context) => const SupplierHomeScreen(),
+      },
     );
   }
 }

@@ -2,6 +2,7 @@
 
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
+import 'package:multi_store_app/main_screens/customer_supplier_home_screens/supplier_home_screen.dart';
 
 import '../cart_screen_vc/cart_screen.dart';
 
@@ -114,7 +115,10 @@ Widget BuyShopOnlineStore(){
                        animationController: _animationController),
                    YellowButton(
                      label: 'Log In',
-                     onPressed: () {},
+                     onPressed: () {
+                       Navigator.pushReplacementNamed(context, '/supplier_home');
+                     //  Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const SupplierHomeScreen()));
+                     },
                      width: MediaQuery.of(context).size.width * 0.25,
                    ),
                    Padding(
@@ -163,7 +167,9 @@ Widget BuyShopOnlineStore(){
                  padding: const EdgeInsets.only(left: 8),
                  child: YellowButton(
                    label: 'Log In',
-                   onPressed: () {},
+                   onPressed: () {
+                     Navigator.pushReplacementNamed(context, '/customer_home');
+                   },
                    width: MediaQuery.of(context).size.width * 0.25,
                  ),
                ),

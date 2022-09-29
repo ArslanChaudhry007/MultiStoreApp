@@ -61,6 +61,7 @@ D:/Flutter e-commerce app/multi_store_app/build/windows/runner/Debug/data/flutte
 D:/Flutter e-commerce app/multi_store_app/build/windows/runner/Debug/data/flutter_assets/images/inapp/google.jpg
 D:/Flutter e-commerce app/multi_store_app/build/windows/runner/Debug/data/flutter_assets/images/inapp/guest.jpg
 D:/Flutter e-commerce app/multi_store_app/build/windows/runner/Debug/data/flutter_assets/images/inapp/logo.jpg
+D:/Flutter e-commerce app/multi_store_app/build/windows/runner/Debug/data/flutter_assets/images/inapp/splash_screen_logo.gif
 D:/Flutter e-commerce app/multi_store_app/build/windows/runner/Debug/data/flutter_assets/images/inapp/store.jpg
 D:/Flutter e-commerce app/multi_store_app/build/windows/runner/Debug/data/flutter_assets/images/kids/kids0.jpg
 D:/Flutter e-commerce app/multi_store_app/build/windows/runner/Debug/data/flutter_assets/images/kids/kids1.jpg
@@ -117,3 +118,4 @@ D:/Flutter e-commerce app/multi_store_app/build/windows/runner/Debug/data/flutte
 D:/Flutter e-commerce app/multi_store_app/build/windows/runner/Debug/data/flutter_assets/NOTICES
 D:/Flutter e-commerce app/multi_store_app/build/windows/runner/Debug/data/flutter_assets/NOTICES.Z
 D:/Flutter e-commerce app/multi_store_app/build/windows/runner/Debug/data/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf
+D:/Flutter e-commerce app/multi_store_app/build/windows/runner/Debug/data/flutter_assets/shaders/ink_sparkle.frag
