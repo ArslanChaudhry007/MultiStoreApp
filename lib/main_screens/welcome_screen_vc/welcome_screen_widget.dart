@@ -175,7 +175,9 @@ Widget BuyShopOnlineStore(){
                ),
                YellowButton(
                  label: 'Sign Up',
-                 onPressed: () {},
+                 onPressed: () {
+                   Navigator.pushNamed(context, '/customer_signup');
+                 },
                  width: MediaQuery.of(context).size.width * 0.25,
                ),
                AnimatedLogo(animationController: _animationController),
