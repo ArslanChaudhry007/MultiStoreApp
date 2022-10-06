@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import '../snackbar_message.dart';
@@ -21,6 +22,7 @@ class _CustomerRegisterScreenState extends State<CustomerRegisterScreen> {
   final GlobalKey<ScaffoldMessengerState> _scaffoldkey =
       GlobalKey<ScaffoldMessengerState>();
   bool passwordVisibility = true;
+  bool isClickSignup = false;
   final ImagePicker _picker = ImagePicker();
   XFile? _imageFile;
   dynamic _pickedImageError;
@@ -34,10 +36,9 @@ class _CustomerRegisterScreenState extends State<CustomerRegisterScreen> {
           imageQuality: 95);
 
       setState(() {
-        if(pickedImage != null){
+        if (pickedImage != null) {
           _imageFile = pickedImage;
         }
-
       });
     } catch (e) {
       setState(() {
@@ -63,6 +64,40 @@ class _CustomerRegisterScreenState extends State<CustomerRegisterScreen> {
         _pickedImageError = e;
       });
       print(_pickedImageError);
+    }
+  }
+
+  Future<void> signUp() async {
+    FocusScope.of(context).requestFocus(FocusNode());
+    if (_formKey.currentState!.validate()) {
+      if (_imageFile != null) {
+       try {
+         setState(() {
+           isClickSignup = true;
+         });
+          await FirebaseAuth.instance
+              .createUserWithEmailAndPassword(email: email, password: password);
+         // _formKey.currentState!.reset();
+          setState(() {
+            isClickSignup = false;
+            MyMessageHandler.showSnackbar(_scaffoldkey, 'Account successfully created.');
+            Navigator.pushReplacementNamed(context, '/customer_home');
+          //  _imageFile = null;
+          });
+        } on FirebaseAuthException catch (e) {
+         setState(() {
+           isClickSignup = false;
+         });
+         MyMessageHandler.showSnackbar(_scaffoldkey, e.message.toString());
+
+        }
+
+
+      } else {
+        MyMessageHandler.showSnackbar(_scaffoldkey, 'Please pick Image first.');
+      }
+    } else {
+      MyMessageHandler.showSnackbar(_scaffoldkey, 'Please fill all fields');
     }
   }
 
@@ -220,26 +255,8 @@ class _CustomerRegisterScreenState extends State<CustomerRegisterScreen> {
                         onPressed: () {},
                       ),
                       // signup button
-                      AuthMainButton(
-                        mainButtonLable: 'Sign Up',
-                        onPressed: () {
-                          FocusScope.of(context).requestFocus(FocusNode());
-                          if (_formKey.currentState!.validate()) {
-                            if (_imageFile != null) {
-                              _formKey.currentState!.reset();
-                              setState(() {
-                                _imageFile = null;
-                              });
-                            } else {
-                              MyMessageHandler.showSnackbar(
-                                  _scaffoldkey, 'Please pick Image first.');
-                            }
-                          } else {
-                            MyMessageHandler.showSnackbar(
-                                _scaffoldkey, 'Please fill all fields');
-                          }
-                        },
-                      )
+                      SignupMethod(),
+
                     ],
                   ),
                 ),
@@ -249,6 +266,28 @@ class _CustomerRegisterScreenState extends State<CustomerRegisterScreen> {
         ),
       ),
     );
+  }
+
+  Padding SignupMethod() {
+    return Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 30,),
+                      child: Material(
+                        color: Colors.purple,
+                        borderRadius: BorderRadius.circular(25),
+                        child: MaterialButton(
+                          minWidth: double.infinity,
+                          onPressed: (){signUp();},
+                          child:  isClickSignup ? Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: const [
+                              CircularProgressIndicator(color: Colors.white,),
+                              SizedBox(width: 5,),
+                              Text(' Loading...', style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold, color: Colors.white),)
+                            ],
+                          ):const Text('Sign Up', style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold, color: Colors.white),),
+                        ),
+                      ),
+                    );
   }
 }
 

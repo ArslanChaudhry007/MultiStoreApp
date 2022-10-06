@@ -4,10 +4,6 @@
         "source": "D:\\Flutter e-commerce app\\multi_store_app\\android\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
     },
     {
-        "merged": "D:\\Flutter e-commerce app\\multi_store_app\\build\\app\\intermediates\\res\\merged\\debug\\drawable_launch_background.xml.flat",
-        "source": "D:\\Flutter e-commerce app\\multi_store_app\\android\\app\\src\\main\\res\\drawable\\launch_background.xml"
-    },
-    {
         "merged": "D:\\Flutter e-commerce app\\multi_store_app\\build\\app\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher.png.flat",
         "source": "D:\\Flutter e-commerce app\\multi_store_app\\android\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png"
     },
